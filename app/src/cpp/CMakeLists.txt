@@ -1,13 +1,11 @@
 cmake_minimum_required(VERSION 3.10.2)
-
 project ( cfc )
-
 set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -mllvm -inline-threshold=5000")
 
-# opencv stuff
+# opencv stuff - updated paths
 add_library( lib_opencv SHARED IMPORTED )
-set_target_properties(lib_opencv PROPERTIES IMPORTED_LOCATION ${OpenCV_DIR}/libs/${ANDROID_ABI}/libopencv_java4.so)
-
+set_target_properties(lib_opencv PROPERTIES 
+    IMPORTED_LOCATION ${OpenCV_DIR}/../libs/${ANDROID_ABI}/libopencv_java4.so)
 set( DISABLE_TESTS true )
 set( OPENCV_LIBS "lib_opencv" )
 
@@ -19,7 +17,7 @@ set (PROJECTS
 )
 
 include_directories(
-        ${OpenCV_DIR}/jni/include
+        ${OpenCV_DIR}/include  # Updated path
         .
         libcimbar/src/lib
         libcimbar/src/third_party_lib
@@ -28,4 +26,3 @@ include_directories(
 foreach(proj ${PROJECTS})
 	add_subdirectory(${proj} build/${proj})
 endforeach()
-
