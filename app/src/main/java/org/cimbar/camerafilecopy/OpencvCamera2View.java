@@ -370,8 +370,8 @@ public class OpencvCamera2View extends CameraBridgeViewBase {
                 ByteBuffer uv_plane2 = planes[2].getBuffer();
                 int uv_plane2_step = planes[2].getRowStride();
                 Mat y_mat = new Mat(h, w, CvType.CV_8UC1, y_plane, y_plane_step);
-                Mat uv_mat1 = new Mat(h / 2, w / 2, CvType.CV_8UC2, uv_plane1, uv_plane1_step);
-                Mat uv_mat2 = new Mat(h / 2, w / 2, CvType.CV_8UC2, uv_plane2, uv_plane2_step);
+                Mat uv_mat1 = new Mat(h / 2, w / 2, CvType.CV_8UC2, uv_plane1);
+                Mat uv_mat2 = new Mat(h / 2, w / 2, CvType.CV_8UC2, uv_plane2);
                 long addr_diff = uv_mat2.dataAddr() - uv_mat1.dataAddr();
                 if (addr_diff > 0) {
                     assert(addr_diff == 1);
