@@ -25,8 +25,9 @@ jobs:
     - name: Download OpenCV AAR
       run: |
         mkdir -p app/libs
-        curl -L https://repo1.maven.org/maven2/org/opencv/opencv/4.8.0/opencv-4.8.0.aar -o app/libs/opencv.aar
-
+        wget https://repo1.maven.org/maven2/org/opencv/opencv/4.8.0/opencv-4.8.0.aar -O app/libs/opencv.aar
+        ls -la app/libs/  # Verify download
+    
     - name: Build
       run: ./gradlew assembleDebug
       
