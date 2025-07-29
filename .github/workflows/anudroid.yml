@@ -28,8 +28,8 @@ jobs:
         unzip opencv-4.8.0-android-sdk.zip
         mkdir -p app/src/main/jniLibs
         mkdir -p app/libs  
-        cp -r opencv-4.8.0-android-sdk/OpenCV-android-sdk/sdk/native/libs/* app/src/main/jniLibs/   
-        cp opencv-4.8.0-android-sdk/OpenCV-android-sdk/sdk/java/aar/opencv/build/outputs/aar/opencv-release.aar app/libs/opencv.aar
+        cp -r OpenCV-android-sdk/sdk/native/libs/* app/src/main/jniLibs/   
+        cp OpenCV-android-sdk/sdk/java/aar/opencv/build/outputs/aar/opencv-release.aar app/libs/opencv.aar
         echo "Native libs:"
         find app/src/main/jniLibs -name '*.so' | xargs ls -la
         echo "AAR file:"
