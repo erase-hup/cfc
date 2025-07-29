@@ -24,10 +24,10 @@ jobs:
       run: chmod +x gradlew
     - name: Download OpenCV AAR
       run: |
-        mkdir -p app/libs
-        curl -L https://github.com/opencv/opencv/releases/download/4.8.0/opencv-4.8.0-android-sdk.zip -o opencv.zip
-        unzip opencv.zip
-        cp opencv-4.8.0-android-sdk/sdk/native/libs/* app/libs/
+        wget https://github.com/opencv/opencv/releases/download/4.8.0/opencv-4.8.0-android-sdk.zip
+        unzip opencv-4.8.0-android-sdk.zip
+        cp opencv-4.8.0-android-sdk/OpenCV-android-sdk/sdk/native/libs/* app/src/main/jniLibs/
+        cp opencv-4.8.0-android-sdk/OpenCV-android-sdk/sdk/java/aar/opencv/build/outputs/aar/*.aar app/libs/
     
     - name: Build
       run: ./gradlew assembleDebug
