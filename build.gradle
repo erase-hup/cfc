@@ -18,10 +18,7 @@ allprojects {
     repositories {
         google()
         jcenter()
-        maven {
-            url 'https://maven.opencv.org/repository/opencv/'
-        }
-        
+        mavenCentral()        
     }
 }
 
