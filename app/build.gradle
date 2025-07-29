@@ -1,5 +1,7 @@
-apply plugin: 'com.android.application'
-apply plugin: 'com.android.library'
+plugins {
+    // OR 'com.android.library' if it's a library module
+    id 'com.android.library'
+}
 
 android {
     compileSdkVersion 33
