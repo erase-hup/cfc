@@ -19,8 +19,15 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: gradle
-
+     
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
-    - name: Build with Gradle
-      run: ./gradlew build
+    - name: Download OpenCV AAR
+      run: |
+        mkdir -p app/libs
+        curl -L https://repo1.maven.org/maven2/org/opencv/opencv/4.8.0/opencv-4.8.0.aar -o app/libs/opencv.aar
+
+    - name: Build
+      run: ./gradlew assembleDebug
+      
+
