@@ -26,7 +26,7 @@ jobs:
       run: |
         wget https://sourceforge.net/projects/opencvlibrary/files/4.8.0/opencv-4.8.0-android-sdk.zip/download -O opencv-4.8.0-android-sdk.zip
         unzip opencv-4.8.0-android-sdk.zip
-        mv opencv-4.8.0-android-sdk opencv
+        mv OpenCV-android-sdk opencv
         mkdir -p app/libs
         wget https://github.com/piruin/opencv-android/releases/download/3.4.1/opencv-android.aar -O app/libs/opencv.aar
         ls -la app/libs/opencv.aar
