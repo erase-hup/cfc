@@ -70,10 +70,10 @@ public class OpencvCameraView extends CameraBridgeViewBase implements PreviewCal
     protected Size bestCameraFrameSize(List<?> supportedSizes, ListItemAccessor accessor, int surfaceWidth, int surfaceHeight) {
         int calcWidth = 10000000;
         int calcHeight = 10000000;
-
-        int maxAllowedWidth = (mMaxWidth != MAX_UNSPECIFIED && mMaxWidth < surfaceWidth)? mMaxWidth : surfaceWidth;
-        int maxAllowedHeight = (mMaxHeight != MAX_UNSPECIFIED && mMaxHeight < surfaceHeight)? mMaxHeight : surfaceHeight;
-
+        
+        int maxAllowedWidth = (getMaxWidth() != Integer.MAX_VALUE && getMaxWidth() < surfaceWidth) ? getMaxWidth() : surfaceWidth;
+        int maxAllowedHeight = (getMaxHeight() != Integer.MAX_VALUE && getMaxHeight() < surfaceHeight) ? getMaxHeight() : surfaceHeight;
+        
         for (Object size : supportedSizes) {
             int width = accessor.getWidth(size);
             int height = accessor.getHeight(size);
