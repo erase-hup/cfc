@@ -39,11 +39,12 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.1.0'
-        if (project.hasProperty('usePrebuiltOpenCV')) {
+    if (project.hasProperty('usePrebuiltOpenCV')) {
         implementation 'com.quickbirdstudios:opencv:4.8.0-3'
     } else {
         implementation files('libs/opencv.aar')
     }
+    implementation 'androidx.documentfile:documentfile:1.0.1'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
