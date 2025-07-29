@@ -16,9 +16,10 @@ android {
         externalNativeBuild {
             cmake {
                 cppFlags "-std=c++17"
-                // Change this line - remove the /jni part
                 arguments "-DOpenCV_DIR=/home/runner/work/cfc/opencv/sdk/native"
-                arguments "-DANDROID_STL=c++shared"
+                arguments "-DANDROID_STL=c++_shared"
+                arguments "-DANDROID_PLATFORM=android-21"
+                arguments "-DANDROID_TOOLCHAIN=clang"
             }
         }
         setProperty("archivesBaseName", "CameraFileCopy")
