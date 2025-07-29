@@ -33,10 +33,7 @@ jobs:
           echo "ANDROID_NDK_HOME=$ANDROID_HOME/ndk/22.1.7171670" >> $GITHUB_ENV
           echo "NDK_HOME=$ANDROID_HOME/ndk/22.1.7171670" >> $GITHUB_ENV
           
-      # Install CMake if needed
-      - name: Install CMake
-        run: |
-          echo "y" | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --install "cmake;3.16.3"
+
           
       # Verify installations
       - name: Verify installations
