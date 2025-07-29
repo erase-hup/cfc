@@ -150,9 +150,7 @@ public class MainActivity extends Activity implements CvCameraViewListener2 {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 mOpenCvCameraView.setCameraPermissionGranted();
             } else {
-                String message = "Camera permission was not granted";
-                Log.e(TAG, message);
-                Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, CAMERA_PERMISSION_REQUEST);
             }
         } else {
             Log.e(TAG, "Unexpected permission request");
